@@ -1,13 +1,13 @@
 # PR Changelog Check | Github Action
 
-This action will make sure that the changelog was edited for any created pull request into give branch. In the example below, the `develop` branch.
+This action will make sure that the changelog was edited for any created pull request into give branch. In the example below, the `development` branch.
 
 ```
 name: Check Changelog
 
 on:
   pull_request:
-    branches: [develop]
+    branches: [development]
   workflow_dispatch:
 
 jobs:
