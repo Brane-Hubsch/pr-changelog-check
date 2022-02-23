@@ -2,7 +2,10 @@ name: PR Check Changelog
 
 on:
   pull_request:
-    branches: [development]
+    branches-ignore:
+      - "main"
+      - "master"
+      - "staging"
   workflow_dispatch:
 
 jobs:
