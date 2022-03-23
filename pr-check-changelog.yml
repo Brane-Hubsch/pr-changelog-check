@@ -20,7 +20,7 @@ jobs:
       # Check that changelog.md has changes
       - name: Check Changelog
         run: |
-          if [[ $(git diff --exit-code origin/develop..HEAD -- docs/changelog.md) ]]; then
+          if [[ $(git diff --exit-code origin/${{ github.base_ref }}..HEAD -- docs/changelog.md) ]]; then
             echo "Changelog changed - Good work!"
             exit 0
           else
