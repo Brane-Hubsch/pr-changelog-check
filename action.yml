@@ -1,0 +1,23 @@
+name: "Check changelog"
+description: "Make sure changelog was updated"
+author: "Albin Hübsch <albin@b-h.se>"
+
+inputs:
+  changelog-path: # id of input
+    description: "Changelog file to watch"
+    required: true
+    default: "docs/changelog.md"
+
+runs:
+  using: "composite"
+  steps:
+    - id: changelog-file-check
+      shell: bash
+      run: |
+        if [[ $(git diff --exit-code origin/${{ github.base_ref }}..HEAD -- ${{inputs.changelog-path}}) ]]; then
+          echo "Changelog changed - Good work!"
+          exit 0
+        else
+          echo "Missing Changelog entry - Please make sure you keep the changelog updated"
+          exit 1
+        fi
