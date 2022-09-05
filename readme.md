@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: Brane-Hubsch/pr-changelog-check
+      - uses: Brane-Hubsch/pr-changelog-check@main
         with:
           changelog-path: "docs/changelog.md"
 ```
