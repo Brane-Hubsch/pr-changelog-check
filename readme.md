@@ -1,4 +1,4 @@
-# PR Changelog Check | Github Action
+# Pull Request Changelog Check | Github Action
 
 This action will make sure that the changelog was edited for any created pull request into given branch. In the example below, the `development` branch.
 
@@ -9,7 +9,7 @@ name: Check Changelog
 
 on:
   pull_request:
-    branches: [development]
+    branches: [development] # <-- Change this to your branch that you want to watch
 
 jobs:
   build:
@@ -20,7 +20,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: Brane-Hubsch/pr-changelog-check@main
+      - uses: Brane-Hubsch/pr-changelog-check@v1
         with:
-          changelog-path: "docs/changelog.md"
+          changelog-path: "docs/changelog.md" # <-- Change this to your changelog path
 ```
+
+---
+
+[B&H](https://b-h.se)
