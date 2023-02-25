@@ -1,6 +1,6 @@
-# Pull Request Changelog Check | Github Action
+# Pull Request Changelog Checking | Github Action
 
-This action will make sure that the changelog was edited for any created pull request into given branch. In the example below, the `development` branch.
+Running this action will check and make sure that a specified changelog file was edited for any created pull request into given branch. In the example below, the `development` branch.
 
 ## Usage
 
@@ -9,22 +9,24 @@ name: Check Changelog
 
 on:
   pull_request:
-    branches: [development] # <-- Change this to your branch that you want to watch
+    # Change this to your branch that you want to watch
+    branches: [development]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - uses: Brane-Hubsch/pr-changelog-check@v1
         with:
-          changelog-path: "docs/changelog.md" # <-- Change this to your changelog path
+          # Change this to your changelog path, defaults to docs/changelog.md
+          changelog-path: "docs/changelog.md"
 ```
 
 ---
 
-[B&H](https://b-h.se)
+Created by [B&H](https://bh.studio)
