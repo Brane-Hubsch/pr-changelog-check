@@ -21,7 +21,7 @@ jobs:
         with:
           fetch-depth: 1
 
-      - uses: Brane-Hubsch/pr-changelog-check@v1
+      - uses: Brane-Hubsch/pr-changelog-check@v2
         with:
           # Change this to your changelog path, defaults to docs/changelog.md
           changelog-path: "docs/changelog.md"
